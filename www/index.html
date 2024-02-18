@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Persistence of Vision</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        height: 100vh;
+        width: 100vw;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      canvas {
+      }
+      #controls {
+        margin-top: 1rem;
+      }
+      #controls button {
+        padding: 0.25rem 0.5rem;
+        font-size: 1rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <canvas></canvas>
+    <div id="controls">
+      <button id="toggle-stop">Stop</button>
+      <button id="cube">Cube</button>
+      <button id="movingLine">Line</button>
+    </div>
+    <script src="./bootstrap.js"></script>
+  </body>
+</html>
