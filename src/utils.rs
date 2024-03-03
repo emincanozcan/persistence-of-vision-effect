@@ -56,16 +56,16 @@ pub fn points_for_square(x1: i32, y1: i32, r: i32) -> Vec<(i32, i32)> {
     let x2 = x1 + r;
     let y2 = y1 + r;
 
-    for point in points_for_line(x1 as i32, y1 as i32, x2 as i32, y1 as i32) {
+    for point in points_for_line(x1, y1, x2, y1) {
         points.push(point);
     }
-    for point in points_for_line(x2 as i32, y1 as i32, x2 as i32, y2 as i32) {
+    for point in points_for_line(x2, y1, x2, y2) {
         points.push(point);
     }
-    for point in points_for_line(x2 as i32, y2 as i32, x1 as i32, y2 as i32) {
+    for point in points_for_line(x2, y2, x1, y2) {
         points.push(point);
     }
-    for point in points_for_line(x1 as i32, y2 as i32, x1 as i32, y1 as i32) {
+    for point in points_for_line(x1, y2, x1, y1) {
         points.push(point);
     }
 
@@ -81,48 +81,48 @@ pub fn points_for_cube(x1: i32, y1: i32, r: i32) -> Vec<(i32, i32)> {
 
     for point in points_for_square(x1, y1, r) {
         points.push(point);
-        points.push((point.0+1, point.1 + 1));
-        points.push((point.0+1, point.1 + 2));
-        points.push((point.0+2, point.1 + 1));
-        points.push((point.0+2, point.1 + 2));
+        points.push((point.0 + 1, point.1 + 1));
+        points.push((point.0 + 1, point.1 + 2));
+        points.push((point.0 + 2, point.1 + 1));
+        points.push((point.0 + 2, point.1 + 2));
     }
 
     for point in points_for_square(x1 + offset, y1 + offset, r) {
         points.push(point);
-        points.push((point.0+1, point.1 + 1));
-        points.push((point.0+1, point.1 + 2));
-        points.push((point.0+2, point.1 + 1));
-        points.push((point.0+2, point.1 + 2));
+        points.push((point.0 + 1, point.1 + 1));
+        points.push((point.0 + 1, point.1 + 2));
+        points.push((point.0 + 2, point.1 + 1));
+        points.push((point.0 + 2, point.1 + 2));
     }
 
     for point in points_for_line(x1, y1, x1 + offset, y1 + offset) {
         points.push(point);
-        points.push((point.0+1, point.1 + 1));
-        points.push((point.0+1, point.1 + 2));
-        points.push((point.0+2, point.1 + 1));
-        points.push((point.0+2, point.1 + 2));
+        points.push((point.0 + 1, point.1 + 1));
+        points.push((point.0 + 1, point.1 + 2));
+        points.push((point.0 + 2, point.1 + 1));
+        points.push((point.0 + 2, point.1 + 2));
     }
 
     for point in points_for_line(x1 + r, y1, x1 + r + offset, y1 + offset) {
         points.push(point);
-        points.push((point.0+1, point.1 + 1));
-        points.push((point.0+1, point.1 + 2));
-        points.push((point.0+2, point.1 + 1));
-        points.push((point.0+2, point.1 + 2));
+        points.push((point.0 + 1, point.1 + 1));
+        points.push((point.0 + 1, point.1 + 2));
+        points.push((point.0 + 2, point.1 + 1));
+        points.push((point.0 + 2, point.1 + 2));
     }
     for point in points_for_line(x1, y1 + r, x1 + offset, y1 + r + offset) {
         points.push(point);
-        points.push((point.0+1, point.1 + 1));
-        points.push((point.0+1, point.1 + 2));
-        points.push((point.0+2, point.1 + 1));
-        points.push((point.0+2, point.1 + 2));
+        points.push((point.0 + 1, point.1 + 1));
+        points.push((point.0 + 1, point.1 + 2));
+        points.push((point.0 + 2, point.1 + 1));
+        points.push((point.0 + 2, point.1 + 2));
     }
     for point in points_for_line(x1 + r, y1 + r, x1 + r + offset, y1 + r + offset) {
         points.push(point);
-        points.push((point.0+1, point.1 + 1));
-        points.push((point.0+1, point.1 + 2));
-        points.push((point.0+2, point.1 + 1));
-        points.push((point.0+2, point.1 + 2));
+        points.push((point.0 + 1, point.1 + 1));
+        points.push((point.0 + 1, point.1 + 2));
+        points.push((point.0 + 2, point.1 + 1));
+        points.push((point.0 + 2, point.1 + 2));
     }
 
     return points.into_iter().unique().collect();
